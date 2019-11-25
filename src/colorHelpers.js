@@ -36,9 +36,13 @@ function generatePalette(starterPalette) {
 		emoji: starterPalette.emoji,
 		colors: {}
 	};
+
+	// colors: {50 = [], 100 = [] ...}
 	for (let level of levels) {
 		newPalette.colors[level] = [];
 	}
+
+	// for each color in starterPalette, get 10 shades of colors from dark-to-light.reversed
 	for (let color of starterPalette.colors) {
 		let scale = getScale(color.color, 10).reverse();
 
@@ -58,7 +62,7 @@ function generatePalette(starterPalette) {
 	return newPalette;
 }
 
-//create an array [dark hexColor, hexColor, white]
+//create an array of color range [hexColor(1.4x darker), hexColor, white]
 function getRange(hexColor) {
 	const end = "#fff";
 	return [
@@ -70,6 +74,7 @@ function getRange(hexColor) {
 	];
 }
 
+//make an array of 10 colors from the base hexColor with range generated from getRange
 function getScale(hexColor, numberOfColors) {
 	return chroma
 		.scale(getRange(hexColor))
