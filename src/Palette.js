@@ -5,13 +5,18 @@ import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 
 class Palette extends Component {
+	constructor(props) {
+		super(props);
+		this.state = { level: 500 };
+	}
+
 	render() {
-		const colorBoxes = this.props.palette.colors[500].map(color => (
-			<ColorBox background={color.hex} name={color.name} />
-		));
+		const colorBoxes = this.props.palette.colors[
+			this.state.level
+		].map(color => <ColorBox background={color.hex} name={color.name} />);
 		return (
 			<div className='Palette'>
-				<Slider />
+				<Slider defaultValue={this.state.level} min={100} max={900} />
 				{/* Navbar goes here  */}
 				<div className='Palette-colors'>{colorBoxes}</div>
 				{/* footer */}
