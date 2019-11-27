@@ -9,8 +9,20 @@ import "rc-slider/assets/index.css";
 import "./Navbar.css";
 
 class Navbar extends Component {
+	constructor(props) {
+		super(props);
+		this.state = { format: "hex" };
+		this.handleChange = this.handleChange.bind(this);
+	}
+
+	handleChange(e) {
+		this.setState({ format: e.target.value });
+		this.props.handleChange(e.target.value);
+	}
+
 	render() {
 		const { level, changeLevel } = this.props;
+		const { format } = this.state;
 
 		return (
 			<header className='Navbar'>
@@ -30,10 +42,10 @@ class Navbar extends Component {
 					/>
 				</div>
 				<div className='select-container'>
-					<Select>
-						<MenuItem value='hex'>Hex #fff</MenuItem>
-						<MenuItem value='rgb'>RGB 255 255 255</MenuItem>
-						<MenuItem value='rbga'>RGBA 255 255 255 1.0</MenuItem>
+					<Select value={format} onChange={this.handleChange}>
+						<MenuItem value='hex'>Hex: #ffffff </MenuItem>
+						<MenuItem value='rgb'>RGB: rgb(255, 255, 255)</MenuItem>
+						<MenuItem value='rgba'>RGBA: rgba(255, 255, 255, 1.0)</MenuItem>
 					</Select>
 				</div>
 			</header>
