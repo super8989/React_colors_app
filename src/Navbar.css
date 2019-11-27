@@ -41,9 +41,7 @@
 .rc-slider-handle:focus {
 	background-color: limegreen;
 	outline: none;
-	border: 2px solid limegreen;
+	border: 2px solid forestgreen;
 	box-shadow: none;
-
-	margin-left: -7px;
 	margin-top: -3px;
 }
