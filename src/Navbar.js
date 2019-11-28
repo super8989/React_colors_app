@@ -14,13 +14,13 @@ import "./Navbar.css";
 class Navbar extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { format: "hex", open: true };
+		this.state = { format: "hex", open: false };
 		this.handleFormatChange = this.handleFormatChange.bind(this);
 		this.closeSnackbar = this.closeSnackbar.bind(this);
 	}
 
 	handleFormatChange(e) {
-		this.setState({ format: e.target.value });
+		this.setState({ format: e.target.value, open: true });
 		this.props.handleChange(e.target.value);
 	}
 
@@ -60,7 +60,11 @@ class Navbar extends Component {
 					anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
 					open={this.state.open}
 					autoHideDuration={3000}
-					message={<span id='message-id'>Format Changed</span>}
+					message={
+						<span id='message-id'>
+							Format Changed to {format.toUpperCase()}
+						</span>
+					}
 					ContentProps={{ "aria-describedby": "message-id" }}
 					onClose={this.closeSnackbar}
 					action={[
