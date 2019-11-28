@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import Snackbar from "@material-ui/core/Snackbar";
+import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 
 import Slider from "rc-slider";
@@ -53,6 +54,14 @@ class Navbar extends Component {
 				<Snackbar
 					anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
 					open={this.state.open}
+					autoHideDuration={3000}
+					message={<span id='message-id'>Format Changed</span>}
+					ContentProps={{ "aria-describedby": "message-id" }}
+					action={[
+						<IconButton>
+							<CloseIcon />
+						</IconButton>
+					]}
 				/>
 			</header>
 		);
