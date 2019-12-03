@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Navbar from "./Navbar";
 import ColorBox from "./ColorBox";
 
 class SingleColorPalette extends Component {
@@ -33,6 +34,7 @@ class SingleColorPalette extends Component {
 
 		return (
 			<div className='Palette'>
+				<Navbar />
 				<h1>Single Color palette</h1>
 				<div className='Palette-colors'>{colorBoxes}</div>
 			</div>

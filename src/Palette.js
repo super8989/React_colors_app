@@ -35,6 +35,7 @@ class Palette extends Component {
 				showLink={true}
 			/>
 		));
+
 		return (
 			<div className='Palette'>
 				<Navbar
