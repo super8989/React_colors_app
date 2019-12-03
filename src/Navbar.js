@@ -30,7 +30,7 @@ class Navbar extends Component {
 	}
 
 	render() {
-		const { level, changeLevel } = this.props;
+		const { level, changeLevel, showingAllColors } = this.props;
 		const { format } = this.state;
 
 		return (
@@ -39,7 +39,7 @@ class Navbar extends Component {
 					<Link to='/'>Color Picker</Link>
 				</div>
 
-				{this.props.showingAllColors && (
+				{showingAllColors && (
 					<div className='slider-container'>
 						<span>Level: {level}</span>
 						<div className='slider'>
