@@ -23,8 +23,8 @@ class ColorBox extends Component {
 	render() {
 		const { name, background, moreUrl, showLink } = this.props;
 		const { copied } = this.state;
-		console.log(chroma(background).luminance());
-		const isDarkColor = chroma(background).luminance() <= 0.3;
+		const isDarkColor = chroma(background).luminance() <= 0.1;
+		const isLightColor = chroma(background).luminance() >= 0.5;
 
 		return (
 			<CopyToClipboard text={background} onCopy={this.changeCopyState}>
@@ -39,14 +39,18 @@ class ColorBox extends Component {
 					</div>
 					<div className='copy-container'>
 						<div className='box-content'>
-							<span className={isDarkColor && "light-text"}>{name}</span>
+							<span className={isDarkColor && "light-text"}>
+								{name} {chroma(background).luminance()}
+							</span>
 						</div>
 						<button className='copy-button'>Copy</button>
 					</div>
 
 					{showLink && (
 						<Link to={moreUrl} onClick={e => e.stopPropagation()}>
-							<span className='see-more'>More</span>
+							<span className={`see-more ${isLightColor && "dark-text"}`}>
+								More
+							</span>
 						</Link>
 					)}
 				</div>
