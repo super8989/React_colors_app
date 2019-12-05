@@ -34,7 +34,10 @@ const styles = {
 			chroma(props.background).luminance() >= 0.5
 				? "rgba(0, 0, 0, 0.3)"
 				: "white",
-		background: "rgba(255, 255, 255, 0.6)",
+		background: props =>
+			chroma(props.background).luminance() >= 0.5
+				? "rgba(255, 255, 255, 0.6)"
+				: "rgba(255, 255, 255, 0.2)",
 		position: "absolute",
 		border: "none",
 		right: "0px",
