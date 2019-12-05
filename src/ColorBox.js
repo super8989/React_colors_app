@@ -12,6 +12,10 @@ const styles = {
 	copyText: {
 		color: props =>
 			chroma(props.background).luminance() >= 0.5 ? "black" : "white"
+	},
+	colorName: {
+		color: props =>
+			chroma(props.background).luminance() <= 0.4 ? "white" : "black"
 	}
 };
 
@@ -47,7 +51,7 @@ class ColorBox extends Component {
 					</div>
 					<div className='copy-container'>
 						<div className='box-content'>
-							<span className={isDarkColor && "light-text"}>{name}</span>
+							<span className={classes.colorName}>{name}</span>
 						</div>
 						<button className={`copy-button ${isLightColor && "dark-text"}`}>
 							Copy
