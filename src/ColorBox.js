@@ -16,6 +16,20 @@ const styles = {
 	colorName: {
 		color: props =>
 			chroma(props.background).luminance() <= 0.4 ? "white" : "black"
+	},
+	seeMore: {
+		color: props =>
+			chroma(props.background).luminance() >= 0.5 ? "black" : "white",
+		background: "rgba(255, 255, 255, 0.3)",
+		position: "absolute",
+		border: "none",
+		right: "0px",
+		bottom: "0px",
+		width: "60px",
+		height: "30px",
+		textAlign: "center",
+		lineHeight: "30px",
+		textTransform: "uppercase"
 	}
 };
 
@@ -60,9 +74,7 @@ class ColorBox extends Component {
 
 					{showLink && (
 						<Link to={moreUrl} onClick={e => e.stopPropagation()}>
-							<span className={`see-more ${isLightColor && "dark-text"}`}>
-								More
-							</span>
+							<span className={classes.seeMore}>More</span>
 						</Link>
 					)}
 				</div>
