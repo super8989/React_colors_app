@@ -11,7 +11,7 @@ import "./ColorBox.css";
 const styles = {
 	ColorBox: {
 		width: "20%",
-		height: "25%",
+		height: props => (props.showingFullPalette ? "25%" : "50%"),
 		margin: "0 auto",
 		display: "inline-block",
 		position: "relative",
@@ -87,10 +87,14 @@ class ColorBox extends Component {
 	}
 
 	render() {
-		const { name, background, moreUrl, showLink, classes } = this.props;
+		const {
+			name,
+			background,
+			moreUrl,
+			showingFullPalette,
+			classes
+		} = this.props;
 		const { copied } = this.state;
-		const isDarkColor = chroma(background).luminance() <= 0.4;
-		const isLightColor = chroma(background).luminance() >= 0.5;
 
 		return (
 			<CopyToClipboard text={background} onCopy={this.changeCopyState}>
@@ -110,7 +114,7 @@ class ColorBox extends Component {
 						<button className={classes.copyButton}>Copy</button>
 					</div>
 
-					{showLink && (
+					{showingFullPalette && (
 						<Link to={moreUrl} onClick={e => e.stopPropagation()}>
 							<span className={classes.seeMore}>More</span>
 						</Link>
