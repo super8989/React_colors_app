@@ -13,6 +13,9 @@ const styles = {
 		height: "100vh",
 		display: "flex",
 		flexDirection: "column"
+	},
+	colors: {
+		height: "90%"
 	}
 };
 
@@ -58,7 +61,7 @@ class Palette extends Component {
 					handleChange={this.changeFormat}
 					showingAllColors
 				/>
-				<div className='Palette-colors'>{colorBoxes}</div>
+				<div className={classes.colors}>{colorBoxes}</div>
 				<PaletteFooter paletteName={paletteName} emoji={emoji} />
 			</div>
 		);
