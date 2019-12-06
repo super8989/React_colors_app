@@ -95,7 +95,7 @@
 	position: absolute;
 } */
 
-.copy-msg {
+/* .copy-msg {
 	position: fixed;
 	left: 0;
 	right: 0;
@@ -118,7 +118,7 @@
 	z-index: 25;
 	transition: all 0.4s ease-in-out;
 	transition-delay: 0.1s;
-}
+} */
 
 .copy-msg h1 {
 	font-weight: 400;
