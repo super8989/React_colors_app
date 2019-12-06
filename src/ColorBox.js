@@ -109,7 +109,24 @@ const styles = {
 		transform: "scale(0.1)",
 		opacity: "0",
 		color: "white",
-		zIndex: "-1"
+		zIndex: "-1",
+		"& h1": {
+			background: props =>
+				chroma(props.background).luminance() >= 0.5
+					? "rgba(0,0,0,0.1)"
+					: "rgba(255, 255, 255, 0.2)",
+			fontWeight: "400",
+			textShadow: "1px 2px black",
+			width: "100%",
+			textAlign: "center",
+			marginBottom: "0",
+			padding: "1rem",
+			textTransform: "uppercase"
+		},
+		"& p": {
+			fontSize: "1.5rem",
+			fontWeight: "200"
+		}
 	},
 	showMessage: {
 		opacity: "1",
