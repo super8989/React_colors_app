@@ -6,8 +6,6 @@ import styles from "./styles/ColorBoxStyles";
 
 import { withStyles } from "@material-ui/styles";
 
-import "./ColorBox.css";
-
 class ColorBox extends Component {
 	constructor(props) {
 		super(props);
