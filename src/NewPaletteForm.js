@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -10,6 +11,8 @@ import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+
+import { ChromePicker } from "react-color";
 
 const drawerWidth = 240;
 
@@ -124,6 +127,10 @@ class NewPaletteForm extends Component {
 							<ChevronLeftIcon />
 						</IconButton>
 					</div>
+					<ChromePicker
+						color='purple'
+						onChangeComplete={newColor => console.log(newColor)}
+					/>
 					<Divider />
 				</Drawer>
 				<main
