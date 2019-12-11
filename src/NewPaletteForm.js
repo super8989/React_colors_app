@@ -84,7 +84,7 @@ class NewPaletteForm extends Component {
 			open: true,
 			currentColor: "teal",
 			newName: "",
-			colors: ["purple", "#e15764"]
+			colors: []
 		};
 		this.updateCurrentColor = this.updateCurrentColor.bind(this);
 		this.addNewColor = this.addNewColor.bind(this);
@@ -104,7 +104,11 @@ class NewPaletteForm extends Component {
 	}
 
 	addNewColor() {
-		this.setState({ colors: [...this.state.colors, this.state.currentColor] });
+		const newColor = {
+			color: this.state.currentColor,
+			name: this.state.newName
+		};
+		this.setState({ colors: [...this.state.colors, newColor] });
 	}
 
 	handleChange(evt) {
@@ -166,16 +170,16 @@ class NewPaletteForm extends Component {
 						color={this.state.currentColor}
 						onChangeComplete={this.updateCurrentColor}
 					/>
-					<ValidatorForm>
+					<ValidatorForm onSubmit={this.addNewColor}>
 						<TextValidator
 							value={this.state.newName}
 							onChange={this.handleChange}
 						/>
 						<Button
 							variant='contained'
+							type='submit'
 							color='primary'
 							style={{ backgroundColor: this.state.currentColor }}
-							onClick={this.addNewColor}
 						>
 							Add Colour
 						</Button>
@@ -189,7 +193,7 @@ class NewPaletteForm extends Component {
 					<div className={classes.drawerHeader} />
 
 					{this.state.colors.map(color => (
-						<DraggableColorbox color={color} />
+						<DraggableColorbox color={color.color} name={color.name} />
 					))}
 				</main>
 			</div>
