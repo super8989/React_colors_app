@@ -174,6 +174,8 @@ class NewPaletteForm extends Component {
 						<TextValidator
 							value={this.state.newName}
 							onChange={this.handleChange}
+							validators={["required", "isEmail"]}
+							errorMessages={["this field is required", "email is not valid"]}
 						/>
 						<Button
 							variant='contained'
