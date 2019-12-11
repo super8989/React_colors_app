@@ -80,7 +80,7 @@ class NewPaletteForm extends Component {
 		this.state = {
 			open: true,
 			currentColor: "teal",
-			colors: ["purple", "e15764"]
+			colors: ["purple", "#e15764"]
 		};
 		this.updateCurrentColor = this.updateCurrentColor.bind(this);
 		this.addNewColor = this.addNewColor.bind(this);
@@ -174,7 +174,7 @@ class NewPaletteForm extends Component {
 					<div className={classes.drawerHeader} />
 					<ul>
 						{this.state.colors.map(color => (
-							<li>{color}</li>
+							<li style={{ backgroundColor: color }}>{color}</li>
 						))}
 					</ul>
 				</main>
