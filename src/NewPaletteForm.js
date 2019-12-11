@@ -83,10 +83,12 @@ class NewPaletteForm extends Component {
 		this.state = {
 			open: true,
 			currentColor: "teal",
+			newName: "",
 			colors: ["purple", "#e15764"]
 		};
 		this.updateCurrentColor = this.updateCurrentColor.bind(this);
 		this.addNewColor = this.addNewColor.bind(this);
+		this.handleChange = this.handleChange.bind(this);
 	}
 
 	handleDrawerOpen = () => {
@@ -103,6 +105,10 @@ class NewPaletteForm extends Component {
 
 	addNewColor() {
 		this.setState({ colors: [...this.state.colors, this.state.currentColor] });
+	}
+
+	handleChange(evt) {
+		this.setState({ newName: evt.target.value });
 	}
 
 	render() {
@@ -161,7 +167,10 @@ class NewPaletteForm extends Component {
 						onChangeComplete={this.updateCurrentColor}
 					/>
 					<ValidatorForm>
-						<TextValidator />
+						<TextValidator
+							value={this.state.newName}
+							onChange={this.handleChange}
+						/>
 						<Button
 							variant='contained'
 							color='primary'
