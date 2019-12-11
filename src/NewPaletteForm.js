@@ -187,7 +187,7 @@ class NewPaletteForm extends Component {
 							onChange={this.handleChange}
 							validators={["required", "isColorNameUnique", "isColorUnique"]}
 							errorMessages={[
-								"this field is required",
+								"Enter a colour name",
 								"Colour name must be unique",
 								"Colour already used"
 							]}
