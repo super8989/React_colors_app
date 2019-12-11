@@ -12,6 +12,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import Button from "@material-ui/core/Button";
+import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 
 import { ChromePicker } from "react-color";
 import DraggableColorbox from "./DraggableColorBox";
@@ -159,14 +160,17 @@ class NewPaletteForm extends Component {
 						color={this.state.currentColor}
 						onChangeComplete={this.updateCurrentColor}
 					/>
-					<Button
-						variant='contained'
-						color='primary'
-						style={{ backgroundColor: this.state.currentColor }}
-						onClick={this.addNewColor}
-					>
-						Add Colour
-					</Button>
+					<ValidatorForm>
+						<TextValidator />
+						<Button
+							variant='contained'
+							color='primary'
+							style={{ backgroundColor: this.state.currentColor }}
+							onClick={this.addNewColor}
+						>
+							Add Colour
+						</Button>
+					</ValidatorForm>
 				</Drawer>
 				<main
 					className={classNames(classes.content, {
