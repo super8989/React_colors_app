@@ -102,6 +102,11 @@ class NewPaletteForm extends Component {
 		ValidatorForm.addValidationRule("isColorUnique", value =>
 			this.state.colors.every(({ color }) => color !== this.state.currentColor)
 		);
+		ValidatorForm.addValidationRule("isPaletteNameUnique", value =>
+			this.props.palettes.every(
+				({ paletteName }) => paletteName.toLowerCase() !== value.toLowerCase()
+			)
+		);
 	}
 
 	handleDrawerOpen = () => {
@@ -176,8 +181,11 @@ class NewPaletteForm extends Component {
 								value={this.state.newPaletteName}
 								name='newPaletteName'
 								onChange={this.handleChange}
-								validators={["required"]}
-								errorMessages={["Enter Palette name"]}
+								validators={["required", "isPaletteNameUnique"]}
+								errorMessages={[
+									"Enter Palette name",
+									"Palette name is already taken"
+								]}
 							/>
 							<Button variant='contained' color='primary' type='submit'>
 								Save Palette
