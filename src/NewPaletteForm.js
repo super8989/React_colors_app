@@ -176,6 +176,8 @@ class NewPaletteForm extends Component {
 								value={this.state.newPaletteName}
 								name='newPaletteName'
 								onChange={this.handleChange}
+								validators={["required"]}
+								errorMessages={["Enter Palette name"]}
 							/>
 							<Button variant='contained' color='primary' type='submit'>
 								Save Palette
