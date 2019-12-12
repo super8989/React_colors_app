@@ -133,6 +133,7 @@ class NewPaletteForm extends Component {
 			colors: this.state.colors
 		};
 		this.props.savePalette(newPalette);
+		this.props.history.push("/");
 	}
 
 	render() {
