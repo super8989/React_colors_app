@@ -260,6 +260,7 @@ class NewPaletteForm extends Component {
 					<DraggableColorList
 						colors={this.state.colors}
 						removeColor={this.removeColor}
+						axis='xy'
 					/>
 				</main>
 			</div>
