@@ -11,7 +11,11 @@ const styles = {
 		display: "inline-block",
 		position: "relative",
 		cursor: "pointer",
-		marginBottom: "-3.5px"
+		marginBottom: "-3.5px",
+		"&:hover svg": {
+			color: "white",
+			transform: "scale(1.5)"
+		}
 	},
 	boxContent: {
 		position: "absolute",
@@ -19,12 +23,15 @@ const styles = {
 		left: "0px",
 		bottom: "0px",
 		padding: "10px",
-		color: "black",
+		color: "rgba(0, 0, 0, 0.5)",
 		letterSpacing: "1px",
 		textTransform: "uppercase",
 		fontSize: "12px",
 		display: "flex",
 		justifyContent: "space-between"
+	},
+	deleteIcon: {
+		transition: "all 0.2s ease-in-out"
 	}
 };
 
@@ -35,7 +42,7 @@ function DraggableColorbox(props) {
 		<div className={classes.root} style={{ backgroundColor: props.color }}>
 			<div className={classes.boxContent}>
 				<span>{props.name}</span>
-				<DeleteIcon className={classes.delete} />
+				<DeleteIcon className={classes.deleteIcon} />
 			</div>
 		</div>
 	);
