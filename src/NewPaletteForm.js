@@ -184,6 +184,7 @@ class NewPaletteForm extends Component {
 	render() {
 		const { classes, maxColors } = this.props;
 		const { open, colors } = this.state;
+		const paletteIsFull = colors.length >= maxColors;
 
 		return (
 			<div className={classes.root}>
@@ -277,10 +278,10 @@ class NewPaletteForm extends Component {
 							variant='contained'
 							type='submit'
 							color='primary'
-							disabled={colors.length >= maxColors}
+							disabled={paletteIsFull}
 							style={{ backgroundColor: this.state.currentColor }}
 						>
-							Add Colour
+							{paletteIsFull ? "Palette Full" : "Add Colour"}
 						</Button>
 					</ValidatorForm>
 				</Drawer>
