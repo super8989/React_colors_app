@@ -16,6 +16,11 @@ import DraggableColorList from "./DraggableColorList";
 import { arrayMove } from "react-sortable-hoc";
 
 class ColorPickerForm extends Component {
+	constructor(props) {
+		super(props);
+		this.state = { currentColor: "teal" };
+	}
+
 	render() {
 		const { paletteIsFull } = this.props;
 
