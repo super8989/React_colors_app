@@ -51,6 +51,7 @@ class ColorPickerForm extends Component {
 			name: this.state.newColorName
 		};
 		this.props.addNewColor(newColor);
+		this.setState({ newColorName: "" });
 	}
 
 	render() {
