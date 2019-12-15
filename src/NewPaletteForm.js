@@ -79,6 +79,10 @@ const styles = theme => ({
 });
 
 class NewPaletteForm extends Component {
+	static defaultProps = {
+		maxColors: 20
+	};
+
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -152,7 +156,6 @@ class NewPaletteForm extends Component {
 		var rand = Math.floor(Math.random() * allColors.length);
 		const randomColor = allColors[rand];
 		this.setState({ colors: [...this.state.colors, randomColor] });
-		console.log(allColors);
 	}
 
 	handleSubmit() {
@@ -179,8 +182,8 @@ class NewPaletteForm extends Component {
 	};
 
 	render() {
-		const { classes } = this.props;
-		const { open } = this.state;
+		const { classes, maxColors } = this.props;
+		const { open, colors } = this.state;
 
 		return (
 			<div className={classes.root}>
@@ -274,6 +277,7 @@ class NewPaletteForm extends Component {
 							variant='contained'
 							type='submit'
 							color='primary'
+							disabled={colors.length >= maxColors}
 							style={{ backgroundColor: this.state.currentColor }}
 						>
 							Add Colour
