@@ -279,7 +279,11 @@ class NewPaletteForm extends Component {
 							type='submit'
 							color='primary'
 							disabled={paletteIsFull}
-							style={{ backgroundColor: this.state.currentColor }}
+							style={{
+								backgroundColor: paletteIsFull
+									? "grey"
+									: this.state.currentColor
+							}}
 						>
 							{paletteIsFull ? "Palette Full" : "Add Colour"}
 						</Button>
