@@ -18,12 +18,19 @@ import { arrayMove } from "react-sortable-hoc";
 class ColorPickerForm extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { currentColor: "teal" };
+		this.state = { currentColor: "teal", newColorName: "" };
 		this.updateCurrentColor = this.updateCurrentColor.bind(this);
+		this.handleChange = this.handleChange.bind(this);
 	}
 
 	updateCurrentColor(newColor) {
 		this.setState({ currentColor: newColor.hex });
+	}
+
+	handleChange(evt) {
+		this.setState({
+			[evt.target.name]: evt.target.value
+		});
 	}
 
 	render() {
