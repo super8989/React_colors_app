@@ -21,6 +21,7 @@ class ColorPickerForm extends Component {
 		this.state = { currentColor: "teal", newColorName: "" };
 		this.updateCurrentColor = this.updateCurrentColor.bind(this);
 		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	updateCurrentColor(newColor) {
@@ -33,6 +34,14 @@ class ColorPickerForm extends Component {
 		});
 	}
 
+	handleSubmit() {
+		const newColor = {
+			color: this.state.currentColor,
+			name: this.state.newColorName
+		};
+		this.props.addNewColor(newColor);
+	}
+
 	render() {
 		const { paletteIsFull } = this.props;
 
@@ -42,7 +51,7 @@ class ColorPickerForm extends Component {
 					color={this.state.currentColor}
 					onChangeComplete={this.updateCurrentColor}
 				/>
-				<ValidatorForm onSubmit={this.addNewColor}>
+				<ValidatorForm onSubmit={this.handleSubmit}>
 					<TextValidator
 						value={this.state.newColorName}
 						name='newColorName'

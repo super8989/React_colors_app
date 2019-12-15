@@ -114,11 +114,7 @@ class NewPaletteForm extends Component {
 		this.setState({ open: false });
 	};
 
-	addNewColor() {
-		const newColor = {
-			color: this.state.currentColor,
-			name: this.state.newColorName
-		};
+	addNewColor(newColor) {
 		this.setState({
 			colors: [...this.state.colors, newColor],
 			newColorName: ""
@@ -212,7 +208,10 @@ class NewPaletteForm extends Component {
 							Random Colour
 						</Button>
 					</div>
-					<ColorPickerForm paletteIsFull={paletteIsFull} />
+					<ColorPickerForm
+						paletteIsFull={paletteIsFull}
+						addNewColor={this.addNewColor}
+					/>
 				</Drawer>
 				<main
 					className={classNames(classes.content, {
