@@ -17,6 +17,8 @@ import { arrayMove } from "react-sortable-hoc";
 
 class ColorPickerForm extends Component {
 	render() {
+		const { paletteIsFull } = this.props;
+
 		return (
 			<div>
 				<ChromePicker
