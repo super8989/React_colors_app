@@ -94,6 +94,7 @@ class NewPaletteForm extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.removeColor = this.removeColor.bind(this);
 		this.clearColors = this.clearColors.bind(this);
+		this.addRandomColor = this.addRandomColor.bind(this);
 	}
 
 	componentDidMount() {
@@ -143,6 +144,12 @@ class NewPaletteForm extends Component {
 
 	clearColors() {
 		this.setState({ colors: [] });
+	}
+
+	addRandomColor() {
+		// pick random color from existing palettes
+		const allColors = this.props.palettes.map(p => p.colors);
+		console.log(allColors);
 	}
 
 	handleSubmit() {
@@ -236,7 +243,11 @@ class NewPaletteForm extends Component {
 						>
 							Clear Palette
 						</Button>
-						<Button variant='contained' color='primary'>
+						<Button
+							variant='contained'
+							color='primary'
+							onClick={this.addRandomColor}
+						>
 							Random Colour
 						</Button>
 					</div>
