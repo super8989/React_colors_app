@@ -19,6 +19,11 @@ class ColorPickerForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { currentColor: "teal" };
+		this.updateCurrentColor = this.updateCurrentColor.bind(this);
+	}
+
+	updateCurrentColor(newColor) {
+		this.setState({ currentColor: newColor.hex });
 	}
 
 	render() {
