@@ -61,7 +61,7 @@ class PaletteFormNav extends Component {
 	}
 
 	render() {
-		const { classes, open } = this.props;
+		const { classes, open, palettes } = this.props;
 		const { newPaletteName } = this.state;
 
 		return (
@@ -88,7 +88,7 @@ class PaletteFormNav extends Component {
 						</Typography>
 					</Toolbar>
 					<div className={classes.navBtns}>
-						<PaletteMetaForm />
+						<PaletteMetaForm palettes={palettes} />
 						<Link to='/'>
 							<Button variant='contained' color='secondary'>
 								Go Back
