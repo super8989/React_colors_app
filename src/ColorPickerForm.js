@@ -18,7 +18,8 @@ const styles = {
 		fontSize: "1.5rem"
 	},
 	colorNameInput: {
-		width: "100%"
+		width: "100%",
+		height: "70px"
 	}
 };
 
@@ -76,7 +77,10 @@ class ColorPickerForm extends Component {
 					<TextValidator
 						value={newColorName}
 						className={classes.colorNameInput}
+						placeholder='Color Name'
 						name='newColorName'
+						variant='filled'
+						margin='normal'
 						onChange={this.handleChange}
 						validators={["required", "isColorNameUnique", "isColorUnique"]}
 						errorMessages={[
