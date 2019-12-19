@@ -9,6 +9,9 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 
+import { Picker } from "emoji-mart";
+import "emoji-mart/css/emoji-mart.css";
+
 class PaletteMetaForm extends Component {
 	constructor(props) {
 		super(props);
@@ -58,6 +61,8 @@ class PaletteMetaForm extends Component {
 						<DialogContentText>
 							Please enter a name for your new palette. Make sure it's unique!
 						</DialogContentText>
+
+						<Picker />
 
 						<TextValidator
 							label='Palette Name'
