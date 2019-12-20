@@ -21,10 +21,14 @@ export default {
 			textDecoration: "none",
 			color: "black"
 		},
+		[sizes.down("md")]: {
+			fontSize: "0.8rem"
+		},
 		[sizes.down("xs")]: {
 			display: "none"
 		}
 	},
+
 	slider: {
 		width: "340px",
 		margin: "0 10px",
@@ -46,10 +50,12 @@ export default {
 			width: "250px"
 		}
 	},
+
 	selectContainer: {
 		marginLeft: "auto",
 		marginRight: "1rem"
 	},
+
 	level: {
 		margin: "0 10px"
 	}

@@ -26,14 +26,20 @@ export default {
 			height: props => (props.showingFullPalette ? "5%" : "10%")
 		}
 	},
+
 	copyText: {
 		color: props =>
 			chroma(props.background).luminance() >= 0.5 ? "black" : "white"
 	},
+
 	colorName: {
 		color: props =>
-			chroma(props.background).luminance() <= 0.4 ? "white" : "black"
+			chroma(props.background).luminance() <= 0.4 ? "white" : "black",
+		[sizes.down("xs")]: {
+			fontSize: "0.6rem"
+		}
 	},
+
 	seeMore: {
 		color: props =>
 			chroma(props.background).luminance() >= 0.5
@@ -51,8 +57,13 @@ export default {
 		height: "30px",
 		textAlign: "center",
 		lineHeight: "30px",
-		textTransform: "uppercase"
+		textTransform: "uppercase",
+
+		[sizes.down("xs")]: {
+			fontSize: "0.6rem"
+		}
 	},
+
 	copyButton: {
 		color: props =>
 			chroma(props.background).luminance() >= 0.5
@@ -76,6 +87,7 @@ export default {
 		textDecoration: "none",
 		opacity: 0
 	},
+
 	boxContent: {
 		position: "absolute",
 		width: "100%",
@@ -87,6 +99,7 @@ export default {
 		textTransform: "uppercase",
 		fontSize: "12px"
 	},
+
 	copyOverlay: {
 		opacity: "0",
 		zIndex: "0",
@@ -94,12 +107,14 @@ export default {
 		height: "100%",
 		transition: "transform 0.6s ease-in-out"
 	},
+
 	showOverlay: {
 		opacity: "1",
 		transform: "scale(50)",
 		zIndex: "10",
 		position: "absolute"
 	},
+
 	copyMessage: {
 		position: "fixed",
 		left: "0",
@@ -136,6 +151,7 @@ export default {
 			fontWeight: "200"
 		}
 	},
+
 	showMessage: {
 		opacity: "1",
 		transform: "scale(1)",
