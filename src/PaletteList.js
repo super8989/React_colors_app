@@ -21,6 +21,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 
 import CheckIcon from "@material-ui/icons/Check";
 import CloseIcon from "@material-ui/icons/Close";
+import blue from "@material-ui/core/colors/blue";
+import red from "@material-ui/core/colors/red";
 
 import styles from "./styles/PaletteListStyles";
 
@@ -59,7 +61,9 @@ class PaletteList extends Component {
 					<List>
 						<ListItem>
 							<ListItemAvatar>
-								<Avatar>
+								<Avatar
+									style={{ backgroundColor: blue[100], color: blue[600] }}
+								>
 									<CheckIcon />
 								</Avatar>
 							</ListItemAvatar>
@@ -67,7 +71,7 @@ class PaletteList extends Component {
 						</ListItem>
 						<ListItem>
 							<ListItemAvatar>
-								<Avatar>
+								<Avatar style={{ backgroundColor: red[100], color: red[600] }}>
 									<CloseIcon />
 								</Avatar>
 							</ListItemAvatar>
