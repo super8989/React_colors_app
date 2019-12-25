@@ -8,6 +8,8 @@ import { ChromePicker } from "react-color";
 
 import styles from "./styles/ColorPickerFormStyles";
 
+import chroma from "chroma-js";
+
 class ColorPickerForm extends Component {
 	constructor(props) {
 		super(props);
@@ -51,6 +53,8 @@ class ColorPickerForm extends Component {
 		const { paletteIsFull, classes } = this.props;
 		const { currentColor, newColorName } = this.state;
 
+		const isLightColor = chroma(currentColor).luminance() >= 0.5;
+
 		return (
 			<div>
 				<ChromePicker
@@ -84,7 +88,9 @@ class ColorPickerForm extends Component {
 							backgroundColor: paletteIsFull ? "lightgrey" : currentColor
 						}}
 					>
-						{paletteIsFull ? "Palette Full" : "Add Colour"}
+						<span className={isLightColor && classes.addColorText}>
+							{paletteIsFull ? "Palette Full" : "Add Colour"}
+						</span>
 					</Button>
 				</ValidatorForm>
 			</div>

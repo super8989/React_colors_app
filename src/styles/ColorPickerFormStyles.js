@@ -1,5 +1,3 @@
-import chroma from "chroma-js";
-
 const styles = {
 	picker: {
 		width: "100% !important",
@@ -14,6 +12,9 @@ const styles = {
 	colorNameInput: {
 		width: "100%",
 		height: "70px"
+	},
+	addColorText: {
+		color: "rgba(0, 0, 0, 0.6)"
 	}
 };
 
