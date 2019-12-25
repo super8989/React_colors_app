@@ -1,3 +1,5 @@
+import chroma from "chroma-js";
+
 const styles = {
 	picker: {
 		width: "100% !important",
