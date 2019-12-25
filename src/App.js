@@ -115,6 +115,17 @@ class App extends Component {
 								{/* <div className='App'>
 							<Palette palette={generatePalette(seedColors[4])} />
 							</div> */}
+								<Route
+									render={routeProps => (
+										<Page>
+											<PaletteList
+												palettes={this.state.palettes}
+												deletePalette={this.deletePalette}
+												{...routeProps}
+											/>
+										</Page>
+									)}
+								/>
 							</Switch>
 						</CSSTransition>
 					</TransitionGroup>
