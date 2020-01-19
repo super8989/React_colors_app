@@ -1,8 +1,8 @@
 # Palette Creator App
 
-## Preview
+## Demo
 
-[![Sam Yang](blob:https://zeit.co/1c23ff30-68f6-449a-b0a9-a9d524b09bb4)](https://samyang8989-react-palette-creator.netlify.com/)
+(https://reactpalettecreatorapp.super8989.now.sh/)
 
 **[View Live ](https://samyang8989-react-palette-creator.netlify.com/)**
 
