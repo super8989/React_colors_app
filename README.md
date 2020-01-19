@@ -2,7 +2,7 @@
 
 ## Preview
 
-[![Sam Yang](https://353a23c500dde3b2ad58-c49fe7e7355d384845270f4a7a0a7aa1.ssl.cf2.rackcdn.com/5e0a4d126afb0ebc15162ef5/screenshot.png)](https://samyang8989-react-palette-creator.netlify.com/)
+[![Sam Yang](blob:https://zeit.co/1c23ff30-68f6-449a-b0a9-a9d524b09bb4)](https://samyang8989-react-palette-creator.netlify.com/)
 
 **[View Live ](https://samyang8989-react-palette-creator.netlify.com/)**
 
