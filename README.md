@@ -2,6 +2,11 @@
 
 Create, save and delete custom palettes
 
+* React with animated route transitions, Material UI, JSS and Emoji Mart
+* Drag and drop with React Sortable HOC package 
+* Display dynamic text colors using chroma.js luminosity
+* Save and delete created palettes in LocalStorage 
+* Copy selected color to clipboard in 3 different color formats
 
 ## Preview
 
